@@ -928,7 +928,7 @@ func tgBot(BotKey string, wg *sync.WaitGroup) {
 				case "help":
 					msg.Text = locText("commandHelpRes")
                                 case "search":
-					msg.Text = update.Message.Text
+					msg.Text = update.Message.CommandArguments()
 				case "myid":
 					msg.Text = fmt.Sprintf(locText("commandMyIDRes"), update.Message.Chat.ID)
 				}
