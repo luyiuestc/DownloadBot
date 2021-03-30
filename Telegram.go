@@ -927,6 +927,8 @@ func tgBot(BotKey string, wg *sync.WaitGroup) {
 					msg.ReplyMarkup = numericKeyboard
 				case "help":
 					msg.Text = locText("commandHelpRes")
+                                case "search":
+					msg.Text = update.Message.Text()
 				case "myid":
 					msg.Text = fmt.Sprintf(locText("commandMyIDRes"), update.Message.Chat.ID)
 				}
